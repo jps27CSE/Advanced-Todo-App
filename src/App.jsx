@@ -1,16 +1,15 @@
 import React from 'react'
-import {Container,Col,Row} from 'reactstrap' 
+import { Container, Col, Row } from 'reactstrap'
 import Todos from './components/todos/index'
-function App()
-{
-    return(
-       <Container className="my-3">
-           <Row>
-               <Col>
-                  <Todos/>
-               </Col>
-           </Row>
-       </Container>
+function App() {
+    return (
+        <Container className="my-3">
+            <Row>
+                <Col>
+                    <Todos />
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
