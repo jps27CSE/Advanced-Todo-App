@@ -1,6 +1,6 @@
 import React from 'react'
 import { ListGroup, ListGroupItem, CustomInput, Button } from 'reactstrap'
-import PropTypes from 'proptypes'
+import PropTypes from 'prop-types'
 
 // List Item Component
 
@@ -19,10 +19,10 @@ const ListItem = ({ todo, toggleSelect, toggleComplete }) => {
             </div>
             <Button
                 className="ml-auto"
-                color={todo.isCompleted ? 'danger' : 'success'}
+                color={todo.isComplete ? 'danger' : 'success'}
                 onClick={() => toggleComplete(todo.id)}
             >
-                {todo.isCompleted ? 'Complete' : 'Running'}
+                {todo.isComplete ? 'Completed' : 'Running'}
             </Button>
         </ListGroupItem>
     )
@@ -37,13 +37,14 @@ ListItem.prototype = {
 const ListView = ({ todos, toggleSelect, toggleComplete }) => {
     return (
         <ListGroup>
-            {todos.map(todo =>
+            {todos.map(todo => (
                 <ListItem
                     key={todo.id}
+                    todo={todo}
                     toggleComplete={toggleComplete}
                     toggleSelect={toggleSelect}
                 />
-            )}
+            ))}
         </ListGroup>
     )
 
@@ -51,7 +52,7 @@ const ListView = ({ todos, toggleSelect, toggleComplete }) => {
 
 
 ListView.prototype = {
-    todo: PropTypes.object.isRequired,
+    todos: PropTypes.object.isRequired,
     toggleSelect: PropTypes.func.isRequired,
     toggleComplete: PropTypes.func.isRequired
 }
