@@ -27,7 +27,7 @@ const RowItem = ({ todo, toggleSelect, toggleComplete }) => (
     </tr>
 )
 
-RowItem.prototype = {
+RowItem.propTypes = {
     todo: PropTypes.object.isRequired,
     toggleSelect: PropTypes.func.isRequired,
     toggleComplete: PropTypes.func.isRequired
@@ -56,7 +56,7 @@ const TableView = ({ todos, toggleSelect, toggleComplete }) => (
     </Table>
 )
 
-TableView.prototype = {
+TableView.propTypes = {
     todos: PropTypes.object.isRequired,
     toggleSelect: PropTypes.func.isRequired,
     toggleComplete: PropTypes.func.isRequired
