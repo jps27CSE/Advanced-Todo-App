@@ -12,7 +12,7 @@ const Controller = ({ term, handleSearch, toggleForm }) => (
     </div>
 )
 
-Controller.PropTypes = {
+Controller.propTypes = {
     terms: PropTypes.string.isRequired,
     handleSearch: PropTypes.func.isRequired,
     toggleForm: PropTypes.func.isRequired
